@@ -1,0 +1,17 @@
+@BASE_URL = http://localhost:3333
+
+# @name create-client
+POST {{BASE_URL}}/clients
+Content-Type: application/json
+
+{
+    "name": "John Doe S.A3",
+    "email": "johndoe3@jdsa.com",
+    "phone": "11 98812-4571",
+    "coordinates": [{{$randomInt 0 1000}}, {{$randomInt 0 1000}}]
+}
+
+###
+
+# @name get-clients
+GET {{BASE_URL}}/clients?pagination[page]=2&pagination[pageSize]=2
